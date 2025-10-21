@@ -1,0 +1,28 @@
+├── frontend/
+│   ├── package.json
+│   ├── vite.config.js
+│   ├── index.html
+│   └── src/
+│       ├── main.jsx
+│       ├── App.jsx
+│       ├── assets/
+│       │   └── logo.svg
+│       ├── components/
+│       │   ├── ChatPanel.jsx
+│       │   ├── CodePanel.jsx
+│       │   ├── Sidebar.jsx
+│       │   ├── Header.jsx
+│       │   ├── ThemeToggle.jsx
+│       │   └── FileUploader.jsx
+│       ├── context/
+│       │   ├── ThemeContext.jsx
+│       │   ├── ModeContext.jsx
+│       │   └── ChatContext.jsx
+│       ├── pages/
+│       │   └── Home.jsx
+│       ├── styles/
+│       │   ├── theme.css
+│       │   └── app.css
+│       └── utils/
+│           └── api.js
+│
