@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Mony – One Login. All Your Social Media.</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* -------------------------------------------------
+   Global variables & reset
+   ------------------------------------------------- */
+:root {
+  --bg: #0d0d1a;
+  --card-bg: rgba(255,255,255,.05);
+  --text: #e0e0ff;
+  --accent: #ff2e9a;
+  --gradient: linear-gradient(135deg, #ff2e9a, #6b3bff);
+  --shield: linear-gradient(135deg, #9f5bff, #ff2e9a);
+  --lightning: linear-gradient(135deg, #00f2ff, #ff2e9a);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Inter',sans-serif;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:1rem;
+}
+
+/* -------------------------------------------------
+   Container (phone-screen size)
+   ------------------------------------------------- */
+.phone{
+  width:100%;
+  max-width:380px;
+  background:#000;
+  border-radius:2rem;
+  overflow:hidden;
+  box-shadow:0 30px 60px rgba(0,0,0,.6);
+  position:relative;
+}
+
+/* -------------------------------------------------
+   Status bar (time, battery, signal)
+   ------------------------------------------------- */
+.status{
+  height:44px;
+  padding:0 1rem;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  color:#fff;
+  font-size:.8rem;
+  font-weight:600;
+}
+.status .left{font-weight:700}
+
+/* -------------------------------------------------
+   Header (home icon, URL, + , 62)
+   ------------------------------------------------- */
+.header{
+  height:56px;
+  background:rgba(255,255,255,.04);
+  display:flex;
+  align-items:center;
+  padding:0 1rem;
+  gap:.75rem;
+  font-size:.95rem;
+}
+.header .home{
+  width:24px;height:24px;
+  background:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>') center/contain no-repeat;
+}
+.header .url{
+  flex:1;
+  background:rgba(255,255,255,.08);
+  border-radius:999px;
+  padding:.4rem .8rem;
+  font-weight:600;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.header .plus{
+  width:28px;height:28px;
+  background:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>') center/contain no-repeat;
+}
+.header .badge{
+  width:28px;height:28px;
+  background:#ff2e9a;
+  border-radius:50%;
+  color:#fff;
+  font-size:.75rem;
+  font-weight:700;
+  display:flex;align-items:center;justify-content:center;
+}
+
+/* -------------------------------------------------
+   Hero section
+   ------------------------------------------------- */
+.hero{
+  padding:2.5rem 1.5rem 1.5rem;
+  text-align:center;
+}
+.hero .tag{
+  display:inline-block;
+  background:rgba(255,255,255,.07);
+  color:#ff6bc0;
+  font-size:.85rem;
+  font-weight:600;
+  padding:.25rem .75rem;
+  border-radius:999px;
+  margin-bottom:1.5rem;
+}
+.hero h1{
+  font-size:3.2rem;
+  line-height:1.1;
+  margin-bottom:.75rem;
+  background:linear-gradient(90deg,#fff,#ff2e9a);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+.hero h1 span{
+  background:var(--gradient);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+.hero p{
+  font-size:1.05rem;
+  line-height:1.5;
+  opacity:.85;
+  margin-bottom:2rem;
+}
+
+/* -------------------------------------------------
+   Cards (Secure OAuth, Lightning Fast)
+   ------------------------------------------------- */
+.cards{
+  display:flex;
+  flex-direction:column;
+  gap:1rem;
+  padding:0 1rem 2rem;
+}
+.card{
+  background:var(--card-bg);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  border-radius:1.5rem;
+  padding:1.5rem;
+  text-align:center;
+  color:#fff;
+}
+.card .icon{
+  width:64px;height:64px;
+  margin:0 auto 1rem;
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+}
+.card.shield .icon{background:var(--shield)}
+.card.lightning .icon{background:var(--lightning)}
+.card h3{
+  font-size:1.35rem;
+  margin-bottom:.35rem;
+}
+.card p{
+  font-size:.9rem;
+  opacity:.75;
+}
+
+/* -------------------------------------------------
+   Footer watermark (Edit with Lovable)
+   ------------------------------------------------- */
+.watermark{
+  position:absolute;
+  bottom:1rem;
+  right:1rem;
+  background:rgba(0,0,0,.4);
+  color:#fff;
+  font-size:.75rem;
+  padding:.25rem .5rem;
+  border-radius:.5rem;
+  display:flex;align-items:center;gap:.4rem;
+}
+.watermark img{
+  height:16px;
+  filter:brightness(0) invert(1);
+}
+</style>
+</head>
+<body>
+
+<div class="phone">
+  <!-- Status bar -->
+  <div class="status">
+    <div class="left">12:32</div>
+    <div>4G <span style="margin-left:4px;">📶</span> <span style="margin-left:8px;">🔋 38%</span></div>
+  </div>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="home"></div>
+    <div class="url">mony.lovable.app</div>
+    <div class="plus"></div>
+    <div class="badge">62</div>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="tag">✨ One Login. All Your Social Media.</div>
+    <h1>Manage <span>Everything</span><br>In <span>One Place</span></h1>
+    <p>Connect all your social media accounts with just your Gmail.<br>One password, infinite possibilities.</p>
+  </section>
+
+  <!-- Cards -->
+  <div class="cards">
+    <div class="card shield">
+      <div class="icon">🔒</div>
+      <h3>Secure OAuth</h3>
+      <p>Enterprise-grade security with Google authentication</p>
+    </div>
+
+    <div class="card lightning">
+      <div class="icon">⚡</div>
+      <h3>Lightning Fast</h3>
+      <p>Instant sync across all your platforms</p>
+    </div>
+  </div>
+
+  <!-- Watermark -->
+  <div class="watermark">
+    Edit with <img src="https://lovable.dev/favicon.ico" alt=""> Lovable
+  </div>
+</div>
+
+</body>
+</html>
