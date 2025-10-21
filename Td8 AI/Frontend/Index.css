@@ -1,0 +1,17 @@
+:root {
+  --primary: #00c57f;
+  --bg-light: #ffffff;
+  --bg-dark: #0a0a0a;
+  --text-light: #000000;
+  --text-dark: #e6e6e6;
+}
+
+body.light {
+  background-color: var(--bg-light);
+  color: var(--text-light);
+}
+
+body.dark {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+}
