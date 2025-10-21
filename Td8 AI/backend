@@ -1,0 +1,17 @@
+── backend/
+    ├── package.json
+    ├── server.js
+    ├── routes/
+    │   ├── chatRoutes.js
+    │   ├── codeRoutes.js
+    │   └── searchRoutes.js
+    ├── controllers/
+    │   ├── chatController.js
+    │   ├── codeController.js
+    │   └── searchController.js
+    ├── services/
+    │   ├── openaiService.js
+    │   └── webSearchService.js
+    ├── middleware/
+    │   └── fileUpload.js
+    └── .env
